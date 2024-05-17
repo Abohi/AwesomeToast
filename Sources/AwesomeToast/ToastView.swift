@@ -6,7 +6,8 @@ import SwiftUI
 @available(macOS 11.0, *)
 @available(macOS 10.15, *)
 public struct ToastView: View {
-  
+    var foregroundColor: Color
+  var backgroundColor:Color
   var style: ToastStyle
   var message: String
   var width = CGFloat.infinity
@@ -18,7 +19,7 @@ public struct ToastView: View {
         .foregroundColor(style.themeColor)
       Text(message)
         .font(Font.caption)
-        .foregroundColor(Color.white)
+        .foregroundColor(foregroundColor)
       
       Spacer(minLength: 10)
       
@@ -31,7 +32,7 @@ public struct ToastView: View {
     }
     .padding()
     .frame(minWidth: 0, maxWidth: width)
-    .background(Color.black)
+    .background(backgroundColor)
     .cornerRadius(8)
     .overlay(
       RoundedRectangle(cornerRadius: 8)

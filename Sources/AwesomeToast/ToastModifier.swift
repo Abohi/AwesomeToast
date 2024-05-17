@@ -31,6 +31,8 @@ public struct ToastModifier: ViewModifier {
     if let toast = toast {
       VStack {
         ToastView(
+          foregroundColor: toast.forgroundColor,
+          backgroundColor: toast.backgroundColor,
           style: toast.style,
           message: toast.message,
           width: toast.width
